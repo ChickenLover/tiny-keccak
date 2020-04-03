@@ -65,7 +65,7 @@ impl Hasher for CShake {
         self.state.update(input);
     }
 
-    fn finalize(self, output: &mut [u8]) {
+    fn finalize(&mut self, output: &mut [u8]) {
         self.state.finalize(output);
     }
 }
