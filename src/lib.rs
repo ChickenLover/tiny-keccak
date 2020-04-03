@@ -218,7 +218,7 @@ pub trait Hasher {
     fn update(&mut self, input: &[u8]);
 
     /// Pad and squeeze the state to the output.
-    fn finalize(self, output: &mut [u8]);
+    fn finalize(&mut self, output: &mut [u8]);
 }
 
 /// A trait used to convert [`Hasher`] into it's [`Xof`] counterpart.
