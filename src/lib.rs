@@ -457,7 +457,7 @@ impl<P: Permutation> KeccakState<P> {
         self.offset = offset + l;
     }
 
-    fn finalize(mut self, output: &mut [u8]) {
+    fn finalize(&mut self, output: &mut [u8]) {
         self.squeeze(output);
     }
 
