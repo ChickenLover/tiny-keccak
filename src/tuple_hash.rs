@@ -49,7 +49,7 @@ impl Hasher for TupleHash {
         self.state.update(input)
     }
 
-    fn finalize(mut self, output: &mut [u8]) {
+    fn finalize(&mut self, output: &mut [u8]) {
         self.state.update(right_encode(output.len() * 8).value());
         self.state.finalize(output)
     }
