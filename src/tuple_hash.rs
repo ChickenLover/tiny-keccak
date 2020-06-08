@@ -55,6 +55,12 @@ impl Hasher for TupleHash {
     }
 }
 
+impl Xof for TupleHash {
+    fn squeeze(&mut self, output: &mut [u8]) {
+        self.state.squeeze(output)
+    }
+}
+///
 /// The `TupleHashXOF` extendable-output functions defined in [`SP800-185`].
 ///
 /// # Usage
